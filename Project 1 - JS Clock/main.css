@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(19, 19, 82);
+  font-family: sans-serif;
+}
+.clock {
+  width: 350px;
+  height: 350px;
+  box-shadow: -5px -5px 15px rgb(23, 23, 104), 5px 5px 15px rgb(14, 14, 67),
+    inset 5px 5px 15px rgb(14, 14, 67), inset -5px -5px 15px rgb(23, 23, 104);
+  border-radius: 50%;
+  position: relative;
+}
+.number {
+  height: 15px;
+  width: 5px;
+  display: inline-block;
+  background: white;
+  border-radius: 0.5rem;
+  position: absolute;
+}
+.clock .twelve {
+  left: 50%;
+  top: 5px;
+  transform: translateX(-50%);
+}
+.clock .three {
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%) rotate(90deg);
+}
+.clock .six {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5px;
+}
+.clock .nine {
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%) rotate(90deg);
+}
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgb(0, 16, 243);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 99;
+}
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 0.5rem;
+  transform-origin: bottom;
+  transform: translate(-50%);
+}
+.hand.hr {
+  width: 8px;
+  height: 20%;
+  background: white;
+}
+.hand.min {
+  width: 5px;
+  height: 30%;
+  background: rgb(221, 207, 15);
+}
+.hand.sec {
+  width: 3px;
+  height: 40%;
+  background: rgb(201, 18, 180);
+}
+.digital {
+  margin-top: 3rem;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+}
